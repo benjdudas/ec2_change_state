@@ -1,0 +1,9 @@
+galaxy_info:
+  author: benjdudas
+  description: Role to change ec2 instance state
+
+  min_ansible_version: 2.4
+
+dependencies:
+  - python >= 2.6
+  - boto

@@ -1,0 +1,15 @@
+---
+# tasks file for ec2_change_state
+
+- name: start or stop {{ vm_name }}
+  ec2:
+    instance_tags:
+      Name: "{{ vm_name }}"
+    state: "{{ vm_state }}"
+    region: "{{ ec2_region }}"
+
+- name: pause for startup
+  pause:
+    minutes: 2
+  when: vm_state == "running"
+...
